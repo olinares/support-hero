@@ -1,0 +1,39 @@
+<style>
+</style>
+<% @todays_hero.keys.each do |date| %>
+  <h2><center><%= date.strftime('%B') %> <%= date.strftime('%Y') %> Support Heroes</center></h2>
+  <h3 class = 'alert alert-info col-md-12'>Today's Support Hero is <%= @todays_hero[date] %> </class></h3>
+  <br/>
+<% end %>
+
+<div class = 'center'>
+  <div class='container-fluid'>
+    <table id='calendar' class='table-bordered'>
+      
+      <tr >
+         <th> Sunday</th> <th> Monday</th>
+         <th> Tuesday</th> <th> Wednesday</th>
+         <th> Thursday</th> <th> Friday</th>
+         <th> Saturday</th>
+      </tr>
+      
+      <tr>
+        <% @calendar.keys.sort.each do |date| %>
+          <% if date.day == 1 %>
+            <% date.wday.times do %> 
+            <td class='offset col-md-1'></td> 
+            <% end %>
+          <% end %>
+
+          <% if date.wday == 0 %> </tr><tr> 
+          <% end %>
+            <td class='offset col-md-1'> 
+              <%= date.day %><br><br>
+              <a href="/<%= @calendar[date] %>" title = "Click to see <%= @calendar[date] %>'s schedule"><%= @calendar[date] %></a><br><br>
+            </td>
+          <% end %>
+      </tr>
+    </table>
+  </div>
+  <br/>
+</div>

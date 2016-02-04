@@ -11,7 +11,7 @@ ca_holidays = { DateTime.new(2016,1,1) => "New Year’s Day",
                 DateTime.new(2016,11,11) => "Veterans Day",
                 DateTime.new(2016,11,24) => "Thanksgiving Day",
                 DateTime.new(2016,11,25) => "Day after Thanksgiving",
-                DateTime.new(2015,12,26) => "Christmas Day", }
+                DateTime.new(2016,12,26) => "Christmas Day", }
 
 support_heroes = ['Sherry', 'Boris', 'Vicente', 'Matte', 'Jack', 'Sherry', 
                     'Matte', 'Kevin', 'Kevin', 'Vicente', 'Zoe', 'Kevin',
@@ -37,7 +37,7 @@ support_heroes.each do |person|
   puts n
   check_hero = StartingOrder.find_by(list_order: n)
   puts "Starting Order #{check_hero.list_order}"
-  puts "Hero id #{check_hero_heroes_id}"
+  puts "Hero id #{check_hero.heroes_id}"
   n += 1
 end
 

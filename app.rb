@@ -14,7 +14,10 @@ end
 
 # Views
 get '/'  do
-  'Support Hero'    
+  @create_schedule = CreateSchedule.new.new_month_schedule
+  @calendar = GenerateCalendar.new.new_calendar
+  @todays_hero = TodaysHero.new.return_hero
+  erb :index    
 end
 
 # Models
