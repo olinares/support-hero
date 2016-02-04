@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203194006) do
+ActiveRecord::Schema.define(version: 20160204002609) do
+
+  create_table "calendars", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "heroes_id"
+    t.integer  "starting_orders_id"
+    t.integer  "switch_flag"
+  end
 
   create_table "heroes", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "holidays", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "holidayName"
+  end
+
+  create_table "unavailables", force: :cascade do |t|
+    t.datetime "date"
+    t.integer  "heroes_id"
   end
 
 end
