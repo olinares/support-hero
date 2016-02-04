@@ -1,0 +1,21 @@
+body {
+  padding: 80px;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  padding: 15px;
+  border: 1px;
+}
+
+tr {
+  border: 1px;
+}
+
+th {
+  height: 15px;
+  padding: 8px;
+}
