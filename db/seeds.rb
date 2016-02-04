@@ -33,10 +33,10 @@ puts heroes_list
 n = 1
 support_heroes.each do |person|
   next_hero = Hero.find_by name: person
-  StartingOrder.create!(heroes_id: next_hero.id, listorder: n) unless StartingOrder.where( listorder: n ).first
+  StartingOrder.create!(heroes_id: next_hero.id, list_order: n) unless StartingOrder.where( list_order: n ).first
   puts n
-  check_hero = StartingOrder.find_by(listorder: n)
-  puts "Starting Order #{check_hero.listorder}"
+  check_hero = StartingOrder.find_by(list_order: n)
+  puts "Starting Order #{check_hero.list_order}"
   puts "Hero id #{check_hero_heroes_id}"
   n += 1
 end

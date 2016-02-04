@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204002609) do
+ActiveRecord::Schema.define(version: 20160204001032) do
 
   create_table "calendars", force: :cascade do |t|
     t.datetime "date"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20160204002609) do
     t.datetime "date"
     t.string   "holidayName"
   end
+
+  create_table "starting_orders", force: :cascade do |t|
+    t.integer "heroes_id"
+    t.integer "list_order"
+  end
+
+  add_index "starting_orders", ["heroes_id"], name: "index_starting_orders_on_heroes_id"
 
   create_table "unavailables", force: :cascade do |t|
     t.datetime "date"
